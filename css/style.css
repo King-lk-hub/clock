@@ -1,0 +1,222 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    /* 一个元素的高度如果设置成%，要给父元素定高 */
+    /* height: 100%; */
+}
+
+body {
+    /* vh单位view height, vw:view width，是CSS3提供的新单位，主要用到移动端，px像素单位，% */
+    height: 100vh;
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.outer {
+    width: 330px;
+    height: 330px;
+    background-color: #fff;
+    border-radius: 50%;
+}
+
+.inner {
+    border: 15px solid #fff;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    box-shadow: 0 0 20px 0 rgba(7, 7, 7, .5) inset;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box {
+    width: 460px;
+    height: 460px;
+    /* border: 2px solid red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.num, .dot, .line {
+    position: absolute;
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    /* border: 1px solid blue; */
+}
+
+.num:nth-child(1) {
+    transform: rotate(120deg);
+}
+
+.num:nth-child(2) {
+    transform: rotate(150deg);
+}
+
+.num:nth-child(3) {
+    transform: rotate(180deg);
+}
+
+.num:nth-child(4) {
+    transform: rotate(210deg);
+}
+
+.num:nth-child(5) {
+    transform: rotate(240deg);
+}
+
+.num:nth-child(6) {
+    transform: rotate(270deg);
+}
+
+.num:nth-child(7) {
+    transform: rotate(300deg);
+}
+
+.num:nth-child(8) {
+    transform: rotate(330deg);
+}
+
+.num:nth-child(9) {
+    transform: rotate(360deg);
+}
+
+.num:nth-child(10) {
+    transform: rotate(390deg);
+}
+
+.num:nth-child(11) {
+    transform: rotate(420deg);
+}
+
+.num:nth-child(12) {
+    transform: rotate(450deg);
+}
+
+.num span {
+    display: inline-block;
+    width: 30px;
+    font-size: 20px;
+    text-align: center;
+    /* border: 1px solid #000; */
+}
+
+.num:nth-child(1) span {
+    transform: rotate(-120deg);
+}
+
+.num:nth-child(2) span {
+    transform: rotate(-150deg);
+}
+
+.num:nth-child(3) span {
+    transform: rotate(-180deg);
+}
+
+.num:nth-child(4) span {
+    transform: rotate(-210deg);
+}
+
+.num:nth-child(5) span {
+    transform: rotate(-240deg);
+}
+
+.num:nth-child(6) span {
+    transform: rotate(-270deg);
+}
+
+.num:nth-child(7) span {
+    transform: rotate(-300deg);
+}
+
+.num:nth-child(8) span {
+    transform: rotate(-330deg);
+}
+
+.num:nth-child(9) span {
+    transform: rotate(-360deg);
+}
+
+.num:nth-child(10) span {
+    transform: rotate(-390deg);
+}
+
+.num:nth-child(11) span {
+    transform: rotate(-420deg);
+}
+
+.num:nth-child(12) span {
+    transform: rotate(-450deg);
+}
+
+.dot {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dot span {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background-color: #000;
+    border-radius: 50%;
+}
+
+.line {
+    display: flex;
+    align-items: center;
+}
+
+.line span {
+    display: inline-block;
+    background-color: #000;
+    border-radius: 4px;
+}
+
+.second span {
+    width: calc(50% - 50px);
+    height: 2px;
+    margin-left: 50px;
+}
+
+.minute span {
+    width: calc(50% - 70px);
+    height: 4px;
+    margin-left: 70px;
+}
+
+.hour span {
+    width: calc(50% - 90px);
+    height: 8px;
+    margin-left: 90px;
+}
+/* 
+.second{
+    animation: run 60s linear infinite;
+}
+
+.minute{
+    animation: run 3600s linear infinite;
+}
+
+.hour{
+    animation: run 43200s linear infinite;
+} */
+
+@keyframes run {
+    from {
+        transform: rotate(0);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}

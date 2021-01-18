@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <script src="js/bigCircle.js"></script>
+    <script src="js/smallCircle.js"></script>
+    <script src="js/box.js"></script>
+    <script src="js/num.js"></script>
+    <script src="js/clock.js"></script>
+
+    <script>
+        var big = new BigCircle('outer');
+        big.render();
+
+        var small = new SmallCircle('inner');
+        small.render();
+
+        var Bx = new B('box');
+        Bx.render();
+
+        var N = new Num('num');
+        N.render();
+
+        var Do = new Dot('dot');
+        Do.render();
+
+        var yu = new Se('line', 'second');
+        yu.render();
+
+        var Do = new Se('line', 'minute');
+        Do.render();
+
+        var Do = new Se('line', 'hour');
+        Do.render();
+    </script>
+
+    <script>
+        var se = document.querySelector('.second')
+        var mi = document.querySelector('.minute')
+        var ho = document.querySelector('.hour')
+
+        function run() {
+            var date = new Date(); //获取当前时间
+            var h = date.getHours(); //获取时
+            var m = date.getMinutes(); //获取分
+            var s = date.getSeconds(); //获取秒
+
+            var sDeg = 360 / 60 * s; //秒针角度   
+            var mDeg = (m * 60 + s) / 3600 * 360; //分针角度
+            var hDeg = (h * 3600 + m * 60 + s) / (3600 * 12) * 360; //时针角度
+            sDeg += 90;
+            mDeg += 90;
+            hDeg += 90;
+
+            se.style.transform = `rotate(${sDeg}deg)`;
+            mi.style.transform = `rotate(${mDeg}deg)`;
+            ho.style.transform = `rotate(${hDeg}deg)`;
+        }
+        run();
+        setInterval(run, 1000);
+
+        window.onunload = function () {
+
+        }
+    </script>
+</body>
+
+</html>
